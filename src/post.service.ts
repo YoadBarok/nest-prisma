@@ -34,7 +34,6 @@ export class PostService {
   }
 
   async createPost(data: Prisma.PostCreateInput): Promise<Post> {
-    console.log('updated again!');
     return this.prisma.post.create({
       data,
     });
@@ -46,7 +45,7 @@ export class PostService {
   }): Promise<Post> {
     const { data, where } = params;
     return this.prisma.post.update({
-      data, // hi
+      data,
       where,
     });
   }
